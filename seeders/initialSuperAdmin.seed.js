@@ -67,14 +67,13 @@ const seedSuperAdmin = async () => {
 
   } catch (error) {
     console.error("❌ Failed to create superadmin:", error);
-  } finally {
-    await sequelize.close();
   }
 };
 
 // Run the seeder if this file is executed directly
 if (process.argv[1].includes("initialSuperAdmin.seed.js")) {
-  seedSuperAdmin();
+  // it's safe to close the connection when running standalone
+  seedSuperAdmin().finally(() => sequelize.close());
 }
 
 export default seedSuperAdmin;
