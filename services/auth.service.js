@@ -16,7 +16,7 @@ import {
 } from "../models/index.js";
 
 import { generateAccessToken, generateRefreshToken } from "../utils/jwt.js";
-import { getClientIp, getIpLocation, getDeviceType } from "../utils/ipUtils.js";
+import { getClientIp, getIpLocation, getDeviceType } from "../utils/iputils.js";
 import { sendOTPEmail } from "../utils/mailer.js";
 
 import { logger } from "../config/logger.js";
